@@ -1,0 +1,20 @@
+{
+  "short_name": "Orbit Gold",
+  "name": " Gold V4.0 - Adauri N. Alves",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#05070a",
+  "background_color": "#05070a"
+}
