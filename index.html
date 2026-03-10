@@ -329,5 +329,49 @@
     document.getElementById('date-now').innerText = "SISTEMA ATIVO: " + new Date().toLocaleDateString('pt-BR');
     renderTable();
 </script>
+    document.getElementById('date-now').innerText = "Data: " + new Date().toLocaleDateString('pt-BR');
+updateUI();
+
+</script>
+
+<script>
+
+// bloquear clique direito
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// bloquear seleção de texto
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// bloquear copiar
+document.addEventListener("copy", e => e.preventDefault());
+
+// bloquear CTRL+C CTRL+U CTRL+S
+document.addEventListener("keydown", function(e){
+
+if(e.ctrlKey && (
+e.key === "c" ||
+e.key === "u" ||
+e.key === "s" ||
+e.key === "p"
+)){
+e.preventDefault();
+}
+
+});
+
+// bloquear API de compartilhamento
+if (navigator.share) {
+navigator.share = function() {
+alert("Compartilhamento bloqueado neste sistema.");
+};
+}
+
+// bloquear arrastar
+document.addEventListener("dragstart", e => e.preventDefault());
+
+</script>
+
 </body>
 </html>
+
+
