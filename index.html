@@ -369,9 +369,54 @@ alert("Compartilhamento bloqueado neste sistema.");
 document.addEventListener("dragstart", e => e.preventDefault());
 
 </script>
+<script>
 
+// BLOQUEAR MENU
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// BLOQUEAR SELEÇÃO
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// BLOQUEAR CÓPIA
+document.addEventListener("copy", e => e.preventDefault());
+
+// BLOQUEAR TECLAS
+document.addEventListener("keydown", function(e){
+
+if(
+(e.ctrlKey && ["c","u","s","p","x"].includes(e.key.toLowerCase())) ||
+e.key === "F12"
+){
+e.preventDefault();
+alert("Ação bloqueada no sistema.");
+}
+
+});
+
+// BLOQUEAR COMPARTILHAMENTO WEB
+if (navigator.share) {
+navigator.share = async () => {
+alert("🚫 Compartilhamento bloqueado neste sistema.");
+};
+}
+
+// DETECTAR SE ABRIU COMO LINK EXTERNO
+if (window.location.protocol === "file:") {
+
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+history.go(1);
+};
+
+}
+
+// BLOQUEAR ARRASTAR
+document.addEventListener("dragstart", e => e.preventDefault());
+
+</script>
 </body>
 </html>
+
 
 
 
