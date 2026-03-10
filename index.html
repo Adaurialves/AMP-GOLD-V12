@@ -2,13 +2,17 @@
 <html lang="pt-br">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AMP GOLD V7 PRO</title>
+<title>AMP GOLD V8 ULTRA</title>
 
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="logo.png">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf"></script>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,40 +20,31 @@
 
 <body>
 
-<div id="login">
+<header>
 
 <img src="logo.png" class="logo">
 
-<h2>Login AMP</h2>
-
-<input type="email" id="email" placeholder="Email">
-<input type="password" id="senha" placeholder="Senha">
-
-<button onclick="login()">Entrar</button>
-
-</div>
-
-
-<div id="app">
-
-<header>
-
-<img src="logo.png" class="logo-small">
-
-<h1>Sistema AMP Clientes</h1>
+<h1>AMP GOLD V8 ULTRA</h1>
 
 </header>
 
 
-<section class="cadastro">
+<section class="painel">
 
-<h3>Novo Cliente</h3>
+<h2>Novo Cliente</h2>
 
-<input id="nome" placeholder="Nome cliente">
+<input id="nome" placeholder="Nome Cliente">
 <input id="telefone" placeholder="WhatsApp">
+
 <input id="servico" placeholder="Serviço">
 
 <input id="valorTotal" placeholder="Valor total">
+
+<input id="entrada" placeholder="Entrada">
+
+<input id="quitacao" placeholder="Quitação">
+
+<input id="foto" type="file">
 
 <button onclick="salvar()">Salvar Cliente</button>
 
@@ -58,7 +53,7 @@
 
 <section>
 
-<h3>Clientes</h3>
+<h2>Clientes</h2>
 
 <table>
 
@@ -67,9 +62,9 @@
 <tr>
 <th>Cliente</th>
 <th>Serviço</th>
-<th>Valor</th>
+<th>Valores</th>
 <th>Status</th>
-<th>Ação</th>
+<th>Ações</th>
 </tr>
 
 </thead>
@@ -80,9 +75,18 @@
 
 </section>
 
-</div>
+
+<section>
+
+<h2>Faturamento</h2>
+
+<canvas id="grafico"></canvas>
+
+</section>
+
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
