@@ -1,41 +1,79 @@
 body{
-font-family:Arial;
-background:#0b0f14;
+
+background:linear-gradient(135deg,#05070a,#0f1825);
+
 color:white;
+
+font-family:Segoe UI;
+
 padding:20px;
+
 }
 
 .logo{
-width:120px;
+
+width:140px;
+
 display:block;
+
 margin:auto;
+
 }
 
-.logo-small{
-width:50px;
+header{
+
+text-align:center;
+
+margin-bottom:30px;
+
 }
 
 input{
+
 display:block;
-margin:8px 0;
-padding:10px;
+
 width:100%;
+
+padding:12px;
+
+margin:6px 0;
+
+background:#0c121a;
+
+border:1px solid #00c3ff;
+
+color:white;
+
 }
 
 button{
+
 padding:10px;
-background:#00c3ff;
+
+background:linear-gradient(45deg,#00c3ff,#0066ff);
+
 border:none;
+
 color:white;
+
 cursor:pointer;
+
 }
 
 table{
+
 width:100%;
+
 margin-top:20px;
+
+border-collapse:collapse;
+
 }
 
 td,th{
+
 padding:10px;
-border-bottom:1px solid #333;
+
+border-bottom:1px solid #1f2a38;
+
 }
