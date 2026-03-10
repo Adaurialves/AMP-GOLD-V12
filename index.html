@@ -6,15 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AMP GOLD V8 ULTRA</title>
+<title>AMP GOLD V12 IA</title>
 
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jspdf"></script>
-
-<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -24,41 +22,35 @@
 
 <img src="logo.png" class="logo">
 
-<h1>AMP GOLD V8 ULTRA</h1>
+<h1>AMP GOLD V12 IA</h1>
 
 </header>
 
+<nav>
 
-<section class="painel">
+<button onclick="abrir('clientes')">Clientes</button>
+<button onclick="abrir('dashboard')">Dashboard</button>
+<button onclick="abrir('ia')">IA Orçamento</button>
+
+</nav>
+
+<section id="clientes">
 
 <h2>Novo Cliente</h2>
 
-<input id="nome" placeholder="Nome Cliente">
-<input id="telefone" placeholder="WhatsApp">
-
+<input id="nome" placeholder="Cliente">
+<input id="telefone" placeholder="Telefone">
 <input id="servico" placeholder="Serviço">
 
-<input id="valorTotal" placeholder="Valor total">
-
+<input id="valor" placeholder="Valor total">
 <input id="entrada" placeholder="Entrada">
-
 <input id="quitacao" placeholder="Quitação">
 
-<input id="foto" type="file">
-
-<button onclick="salvar()">Salvar Cliente</button>
-
-</section>
-
-
-<section>
-
-<h2>Clientes</h2>
+<button onclick="salvarCliente()">Salvar</button>
 
 <table>
 
 <thead>
-
 <tr>
 <th>Cliente</th>
 <th>Serviço</th>
@@ -66,27 +58,39 @@
 <th>Status</th>
 <th>Ações</th>
 </tr>
-
 </thead>
 
-<tbody id="lista"></tbody>
+<tbody id="listaClientes"></tbody>
 
 </table>
 
 </section>
 
+<section id="dashboard">
 
-<section>
-
-<h2>Faturamento</h2>
+<h2>Dashboard Financeiro</h2>
 
 <canvas id="grafico"></canvas>
 
 </section>
 
+<section id="ia">
 
-<script src="script.js"></script>
+<h2>IA Gerar Orçamento</h2>
+
+<input id="tipoMovel" placeholder="Tipo de móvel (ex: cozinha)">
+<input id="tamanho" placeholder="Tamanho (ex: 3 metros)">
+<input id="complexidade" placeholder="Complexidade (baixa / média / alta)">
+
+<button onclick="gerarOrcamentoIA()">Gerar Orçamento</button>
+
+<div id="orcamentoIA"></div>
+
+</section>
+
+<script src="firebase.js"></script>
+<script src="ia.js"></script>
+<script src="app.js"></script>
 
 </body>
-
 </html>
